@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        Calculator.text = "Multiplication Calculator"
+        Calculator.text = "Calculator"
     }
 
 
