@@ -42,8 +42,8 @@ class ViewController: UIViewController {
     
     @IBAction func calculateDivide(_ sender: Any) {
         
-        var number1 = Int(var1.text!) ?? 0
-        var number2 = Int(var2.text!) ?? 0
+        let number1 = Int(var1.text!) ?? 0
+        let number2 = Int(var2.text!) ?? 0
         
         if(number2 == 0){
             outputLabel.text = "Error"
