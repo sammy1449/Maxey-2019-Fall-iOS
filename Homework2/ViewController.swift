@@ -31,8 +31,8 @@ class ViewController: UIViewController {
     
     @IBAction func calculateMutiply(_ sender: Any) {
         
-        let number1 = Int(var1.text!) ?? 0
-        let number2 = Int(var2.text!) ?? 0
+        let number1 = Double(var1.text!) ?? 0
+        let number2 = Double(var2.text!) ?? 0
         
         
         let answer = number1 * number2
@@ -45,8 +45,8 @@ class ViewController: UIViewController {
     
     @IBAction func calculateDivide(_ sender: Any) {
         
-        let number1 = Int(var1.text!) ?? 0
-        let number2 = Int(var2.text!) ?? 0
+        let number1 = Double(var1.text!) ?? 0
+        let number2 = Double(var2.text!) ?? 0
         
         if(number2 == 0){
             outputLabel.text = "Error"
@@ -62,8 +62,8 @@ class ViewController: UIViewController {
     
     @IBAction func calculateAdd(_ sender: Any) {
         
-        let number1 = Int(var1.text!) ?? 0
-        let number2 = Int(var2.text!) ?? 0
+        let number1 = Double(var1.text!) ?? 0
+        let number2 = Double(var2.text!) ?? 0
         
         
         let answer = number1 + number2
@@ -75,8 +75,8 @@ class ViewController: UIViewController {
     
     @IBAction func calculateSubtract(_ sender: Any) {
         
-        let number1 = Int(var1.text!) ?? 0
-        let number2 = Int(var2.text!) ?? 0
+        let number1 = Double(var1.text!) ?? 0
+        let number2 = Double(var2.text!) ?? 0
         
         
         let answer = number1 - number2
