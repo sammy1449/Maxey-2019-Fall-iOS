@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 class CollectionNameTableViewController: UITableViewController {
     
@@ -16,9 +17,14 @@ class CollectionNameTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        loadSampleCollection()
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+        if let savedCollectionNames = loadCollectionNames(){
+            names += savedCollectionNames
+        }
+       // loadSampleCollection()
     }
+    
 
     // MARK: - Table view data source
 
@@ -58,17 +64,19 @@ class CollectionNameTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            names.remove(at: indexPath.row)
+            saveCollectionNames()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -85,20 +93,80 @@ class CollectionNameTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? ""){
+        case "AddName":
+            os_log("Adding a new name.", log: OSLog.default, type: .debug)
+            
+        case "ShowDetail1":
+            guard let collectionNameDetailViewController = segue.destination as? CollectionsNameViewController else{
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+                
+            guard let selectedCollectioNameCell = sender as? CollectionNameTableViewCell else{
+                    fatalError("Unexpected sender: \(sender)")
+            }
+                    
+            guard let indexPath = tableView.indexPath(for: selectedCollectioNameCell)else{
+                        fatalError("The selected cell is not being displayed by the table")
+                }
+                    
+                let selectedCollectionName = names[indexPath.row]
+                
+                collectionNameDetailViewController.name = selectedCollectionName
+            
+        default:
+            fatalError("Unexpected Segue Identifier: \(segue.identifier)")
+            }
+        
     }
-    */
+ 
+    
+    
+    //MARK: Actions
+    @IBAction func unwindToCollectionNameList(sender: UIStoryboardSegue){
+        if let sourceViewController = sender.source as? CollectionsNameViewController, let name = sourceViewController.name{
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                names[selectedIndexPath.row] = name
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            }else{
+            
+                let newIndexPath = IndexPath(row: names.count, section: 0)
+            
+                names.append(name)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+            saveCollectionNames()
+        }
+    }
     
     //MARK: Private Methods
     
     private func loadSampleCollection(){
         let collection1 = CollectionName(name: "Books")!
-        names += [collection1]
+        let collection2 = CollectionName(name: "Movies")!
+        
+        names += [collection1, collection2]
     }
+    
+    private func saveCollectionNames(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(names, toFile: CollectionName.ArchiveURL.path)
+        
+        if isSuccessfulSave{
+            os_log("Collection names successfully saved.", log: OSLog.default, type: .debug)
+        }else{
+            os_log("Failed to save collection names...", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func loadCollectionNames() -> [CollectionName]?{
+        return NSKeyedUnarchiver.unarchiveObject(withFile: CollectionName.ArchiveURL.path) as? [CollectionName]
+    }
+    
 }

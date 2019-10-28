@@ -10,10 +10,10 @@ import UIKit
 import os.log
 
 class collectionsListTableViewController: UITableViewController {
-    
+
     var collections = [Collection]()
-   
-    
+
+
     //Mark: Actions
     @IBAction func unwindToCollectionList(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as? CollectionViewController, let collection = sourceViewController.collection{
@@ -22,9 +22,9 @@ class collectionsListTableViewController: UITableViewController {
                 collections[selectedIndexPath.row] = collection
                 tableView.reloadRows(at: [selectedIndexPath], with: .none)
             }else{
-            
+
                 let newIndexPath = IndexPath(row: collections.count, section: 0)
-            
+
                 collections.append(collection)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
@@ -33,7 +33,7 @@ class collectionsListTableViewController: UITableViewController {
         }
 
     }
-    
+
     //Mark: Private Methods
     //Checking the running of the app
 //    private func loadSampleBooks(){
@@ -59,11 +59,11 @@ class collectionsListTableViewController: UITableViewController {
             os_log("Failed to save collections...", log: OSLog.default, type: .error)
         }
     }
-    
+
     private func loadCollections() -> [Collection]?{
         return NSKeyedUnarchiver.unarchiveObject(withFile: Collection.ArchiveURL.path) as? [Collection]
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //Use the edit button item provided by the table view controller
@@ -71,46 +71,46 @@ class collectionsListTableViewController: UITableViewController {
         if let savedCollections = loadCollections(){
             collections += savedCollections
         }
-        
+
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-       
+
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+
         return collections.count
     }
 
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "collectionsListTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? collectionsListTableViewCell else{
             fatalError("The dequeued cell is not an instance of collectionsListTableViewCell.")
         }
-        
+
         let collection = collections[indexPath.row]
-        
+
         cell.nameLabel.text = collection.title
         cell.yearLabel.text = "\(collection.year)"
 
         return cell
     }
-    
 
-    
+
+
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
 
-    
+
+
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -120,9 +120,9 @@ class collectionsListTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    
+
 
     /*
     // Override to support rearranging the table view.
@@ -139,39 +139,39 @@ class collectionsListTableViewController: UITableViewController {
     }
     */
 
-    
+
     // MARK: - Navigation
 
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        
+
         switch(segue.identifier ?? ""){
-        
+
         case "AddItem":
             os_log("Adding a new collection.", log: OSLog.default, type: .debug)
-            
+
         case "ShowDetail":
             guard let collectionDetailViewController = segue.destination as? CollectionViewController else{
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            
+
             guard let selectedCollectionCell = sender as? collectionsListTableViewCell else{
                 fatalError("Unexpected sender: \(sender)")
             }
-            
+
             guard let indexPath = tableView.indexPath(for: selectedCollectionCell) else{
                 fatalError("The selected cell is not being displayed by the table")
             }
-            
+
             let selectedCollection = collections[indexPath.row]
-            
+
             collectionDetailViewController.collection = selectedCollection
-            
+
         default:
             fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
     }
-    
-    
+
+
 }
