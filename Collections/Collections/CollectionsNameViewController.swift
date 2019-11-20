@@ -8,6 +8,7 @@
 
 import UIKit
 import os.log
+import CoreData
 
 class CollectionsNameViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate {
 
@@ -17,6 +18,9 @@ class CollectionsNameViewController: UIViewController, UITextFieldDelegate, UINa
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var name: CollectionName?
+    
+    var fetchResult: [MediaType] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

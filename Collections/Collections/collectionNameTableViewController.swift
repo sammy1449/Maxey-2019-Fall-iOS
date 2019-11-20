@@ -8,15 +8,30 @@
 
 import UIKit
 import os.log
+import CoreData
 
 class CollectionNameTableViewController: UITableViewController {
     
     //MARK: Properties
     
     var names = [CollectionName]()
+    var fetchResult: [MediaType] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let newMedia = MediaType(context: DatabaseController.persistentStoreContainer().viewContext)
+        newMedia.mediaTypeName = "New Media name"
+        
+        DatabaseController.saveContext()
+        
+        let fetchRequest:NSFetchRequest = MediaType.fetchRequest()
+        
+        do{
+            fetchResult = try DatabaseController.persistentStoreContainer().viewContext.fetch(fetchRequest)
+        }catch{
+            print(error)
+        }
         
         navigationItem.leftBarButtonItem = editButtonItem
         if let savedCollectionNames = loadCollectionNames(){
@@ -34,8 +49,7 @@ class CollectionNameTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        return names.count
+        return fetchResult.count
     }
 
     
@@ -46,8 +60,8 @@ class CollectionNameTableViewController: UITableViewController {
             fatalError("The dequeued cell is not an instance of CollectionNameTableViewCell.")
         }
         
-        let name = names[indexPath.row]
-        cell.collectionNameLabel.text = name.name
+        //let name = names[indexPath.row]
+        cell.collectionNameLabel.text = fetchResult[indexPath.row].mediaTypeName
 
         // Configure the cell...
 
@@ -69,11 +83,14 @@ class CollectionNameTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            names.remove(at: indexPath.row)
-            saveCollectionNames()
+           // names.remove(at: indexPath.row)
+            fetchResult.remove(at: indexPath.row)
+            DatabaseController.saveContext()
+            //saveCollectionNames()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            
         }    
     }
     

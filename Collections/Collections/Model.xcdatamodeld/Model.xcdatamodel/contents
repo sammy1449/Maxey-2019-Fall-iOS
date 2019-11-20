@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A583" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CollectionList" representedClassName="CollectionList" syncable="YES" codeGenerationType="class">
+        <attribute name="collectionName" optional="YES" attributeType="String"/>
+        <relationship name="mediaTypes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media"/>
+    </entity>
+    <entity name="Media" representedClassName="Media" syncable="YES" codeGenerationType="class">
+        <attribute name="mediaAuthor" optional="YES" attributeType="String"/>
+        <attribute name="mediaDescription" optional="YES" attributeType="String"/>
+        <attribute name="mediaName" attributeType="String"/>
+        <attribute name="mediaYear" optional="YES" attributeType="String"/>
+        <relationship name="mediaType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MediaType"/>
+    </entity>
+    <entity name="MediaType" representedClassName="MediaType" syncable="YES" codeGenerationType="class">
+        <attribute name="mediaTypeName" optional="YES" attributeType="String"/>
+        <relationship name="collectionMedia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectionList"/>
+        <relationship name="multiMedia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media"/>
+    </entity>
+    <elements>
+        <element name="CollectionList" positionX="260.60546875" positionY="60.375" width="128" height="73"/>
+        <element name="Media" positionX="-79.33984375" positionY="173.05078125" width="128" height="118"/>
+        <element name="MediaType" positionX="-142.46875" positionY="-56.61328125" width="128" height="88"/>
+    </elements>
+</model>
