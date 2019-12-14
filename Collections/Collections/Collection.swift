@@ -29,6 +29,7 @@ class Collection: NSObject, NSCoding {
         static let author = "author"
         static let year = "year"
         static let photo = "photo"
+        
     }
     
     // MARK: Initialization
@@ -53,7 +54,10 @@ class Collection: NSObject, NSCoding {
         self.year = year
         self.photo = photo
     }
-    
+    var titleFirstLetter: String {
+       
+        return String(self.title[self.title.startIndex]).uppercased()
+    }
     //MARK: NSCoding
     func encode(with aCoder: NSCoder){
         aCoder.encode(title, forKey: PropertyKey.title)
@@ -81,8 +85,8 @@ class Collection: NSObject, NSCoding {
         
         //Must call designated initializer
         self.init(title: title, author: author, year: year, photo: photo)
+       
     }
-        
-        
+   
 }
 

@@ -33,7 +33,11 @@ class CollectionViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .dark
+        } else {
+            // Fallback on earlier versions
+        }
         nameTextField.delegate = self
         
         //set up views if editing an existing collection
@@ -44,6 +48,8 @@ class CollectionViewController: UIViewController, UITextFieldDelegate, UIImagePi
             yearTextField.text = "\(collection.year)"
             photoImageView.image = collection.photo
         }
+      
+        
         
         //Enable the save button only if the text field has a valid name
         updateSaveButtonState()

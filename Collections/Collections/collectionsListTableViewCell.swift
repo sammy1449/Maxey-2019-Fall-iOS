@@ -14,6 +14,7 @@ class collectionsListTableViewCell: UITableViewCell {
    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var pictureImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

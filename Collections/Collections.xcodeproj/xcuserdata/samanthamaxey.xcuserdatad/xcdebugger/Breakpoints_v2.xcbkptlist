@@ -3,4 +3,242 @@
    uuid = "14352BB3-EE2F-4558-9324-5097A4DDB223"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "377290D3-D250-47BD-9907-10E5375F8EC7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Collections/CollectionController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "CollectionController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "377290D3-D250-47BD-9907-10E5375F8EC7 - ffdf5f7fb049b93"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_B4615743483B91F0D997C7C0B913FE87_func0"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/Collections/CollectionController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "377290D3-D250-47BD-9907-10E5375F8EC7 - c265ae9ce924bd72"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Collections.CollectionController.collectionArray.unsafeMutableAddressor : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/Collections/CollectionController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "377290D3-D250-47BD-9907-10E5375F8EC7 - 7481926ebbc8bb9e"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Collections.CollectionController.collectionArray.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/Collections/CollectionController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  uuid = "377290D3-D250-47BD-9907-10E5375F8EC7 - 61a27312a08a0f92"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Collections.CollectionController.collectionArray.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/Collections/CollectionController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "123">
+               </Location>
+               <Location
+                  uuid = "377290D3-D250-47BD-9907-10E5375F8EC7 - 787d7816bda36c81"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Collections.CollectionController.collectionArray.modify : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/Collections/CollectionController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "377290D3-D250-47BD-9907-10E5375F8EC7 - 610da9f5a7b1924a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Collections.CollectionController.collectionArray.modify : Swift.Array&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/Collections/CollectionController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73669E22-779B-40E8-BE1B-864A0C81B8F1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "collectionsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "73669E22-779B-40E8-BE1B-864A0C81B8F1 - a99fee7b242a9bb5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Collections.collectionsListTableViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/collectionsListTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "678">
+               </Location>
+               <Location
+                  uuid = "73669E22-779B-40E8-BE1B-864A0C81B8F1 - 1c0f6fefbf91fca2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Collections.Collection, Collections.Collection) -&gt; Swift.Bool in Collections.collectionsListTableViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samanthamaxey/BSU/SamanthaMaxey299@u.boisestate.edu/backpack/Maxey-2019-Fall-iOS/Collections/collectionsListTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2863A68E-3094-4516-9F27-50424DA3C634"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "collectionsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "unwindToCollectionList(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFB8CAF6-9453-4410-A82A-D2159DE6175E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "collectionsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
+            landmarkName = "collectionsListTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB1395A2-A46A-4EA6-9118-2C444A19C163"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "collectionsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "collectionsListTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "77C4FF90-8083-4313-9176-51EB3E2B16F3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "collectionsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "unwindToCollectionList(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "67C4C0BE-12E8-4A84-8959-084C146EABE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "collectionsListTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "unwindToCollectionList(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

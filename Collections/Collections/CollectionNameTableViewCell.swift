@@ -13,6 +13,7 @@ class CollectionNameTableViewCell: UITableViewCell {
     //MARK: Properties
     @IBOutlet weak var collectionNameLabel: UILabel!
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
